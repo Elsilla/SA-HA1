@@ -36,7 +36,7 @@ const AboutUs = () => {
 
         {/* CTA Final */}
         <div className="mx-auto mt-20 max-w-4xl text-center animate-fade-in-up" style={{ animationDelay: "700ms" }}>
-          <div className="rounded-2xl bg-gradient-to-r from-primary/20 to-accent/20 p-8">
+          <div className="rounded-2xl shadow-lg from-primary/20 to-accent/20 p-8">
             <h3 className="google-font-text mb-4 text-2xl !font-semibold text-foreground">
               ¿Listo para Descubrir Joyas con Historia?
             </h3>
@@ -46,17 +46,17 @@ const AboutUs = () => {
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button
                 size="lg"
-                className="google-font-text bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all"
+                className="google-font-text btn-green-arcadia bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all"
               >
-                Ver Colección Completa
+                <a href="/catalogo">Ver Colección Completa</a>
               </Button>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
-                className="google-font-text border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                className="google-font-text btn-green-arcadia border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
               >
                 Contáctanos
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

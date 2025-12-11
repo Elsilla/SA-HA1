@@ -5,7 +5,7 @@ const AboutProject = () => {
   return (
     <div className="mx-auto mb-20 max-w-6xl">
       <div className="mb-12 text-center animate-fade-in-up">
-        <h2 className="google-font-title mb-4 text-3xl !font-bold text-foreground md:text-4xl lg:text-[3.3rem]">
+        <h2 className="google-font-title mb-4 text-3xl !font-bold text-foreground md:text-4xl lg:text-[3rem]">
           Nuestra Historia y Propósito
         </h2>
         <div className="mx-auto mb-8 h-1 w-20 bg-accent"></div>

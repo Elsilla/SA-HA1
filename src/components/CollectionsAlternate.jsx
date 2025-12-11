@@ -32,7 +32,7 @@ const CollectionsAlternate = () => {
               <div className="w-full lg:w-1/2">
                 <div className="space-y-8">
                   <div>
-                    <h3 className="google-font-text text-3xl !font-bold text-foreground md:text-4xl lg:text-[2.8rem] mb-4">
+                    <h3 className="google-font-title text-3xl !font-bold text-foreground md:text-4xl lg:text-[2.7rem] mb-4">
                       {collection.title}
                     </h3>
                   </div>
