@@ -36,10 +36,10 @@ const Catalog = () => {
     <section className="bg-background py-20">
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-12 text-center animate-fade-in-up">
-          <h2 className="google-font-title mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-7xl">
+          <h2 className="google-font-title mb-4 text-3xl !font-bold text-foreground md:text-4xl lg:text-[3.3rem]">
             Colecciones Temáticas
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <p className="google-font-text mx-auto max-w-2xl text-muted-foreground">
             Descubre nuestras exclusivas colecciones diseñadas con pasión para
             los verdaderos fans del anime y los videojuegos
           </p>
@@ -62,15 +62,15 @@ const Catalog = () => {
               </div>
               <CardContent className="relative -mt-20 space-y-4 p-6">
                 <div className="rounded-lg bg-card p-6 shadow-lg">
-                  <h3 className="mb-2 text-2xl font-bold text-card-foreground">
+                  <h3 className="google-font-text mb-2 text-2xl !font-semibold text-card-foreground">
                     {collection.title}
                   </h3>
-                  <p className="mb-4 text-sm text-muted-foreground">
+                  <p className="google-font-text mb-4 text-sm text-muted-foreground">
                     {collection.description}
                   </p>
                   <Button
                     variant="default"
-                    className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                    className="google-font-text !font-medium w-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
                   >
                     Ir a la Colección
                   </Button>

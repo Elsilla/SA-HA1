@@ -5,11 +5,11 @@ const Team = ({ teamMembers }) => {
   return (
     <div className="mx-auto max-w-6xl">
       <div className="mb-12 text-center">
-        <h2 className="google-font-title mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-7xl">
+        <h2 className="google-font-title mb-4 text-3xl !font-bold text-foreground md:text-4xl lg:text-[3.3rem]">
           Conoce al Equipo
         </h2>
         <div className="mx-auto mb-8 h-1 w-20 bg-accent"></div>
-        <p className="mx-auto max-w-2xl text-muted-foreground">
+        <p className="google-font-text mx-auto max-w-2xl text-muted-foreground">
           Seis apasionados, una visión: crear la joyería de anime más elegante del mundo.
         </p>
       </div>
@@ -34,22 +34,22 @@ const Team = ({ teamMembers }) => {
 
               {/* Badge decorativo */}
               <div className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 shadow-md">
-                <span className="font-bold text-primary">#{member.id}</span>
+                <span className="google-font-text !font-bold text-primary">#{member.id}</span>
               </div>
             </div>
 
             {/* CONTENIDO DE LA TARJETA */}
             <div className="p-6">
               <div className="mb-3">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
+                <h3 className="google-font-text text-xl !font-semibold text-foreground group-hover:text-accent transition-colors">
                   {member.name}
                 </h3>
-                <p className="text-sm font-medium text-primary">
+                <p className="google-font-text text-sm !font-medium text-primary">
                   {member.role}
                 </p>
               </div>
 
-              <p className="mb-4 text-muted-foreground text-sm leading-relaxed">
+              <p className="google-font-text mb-4 text-muted-foreground text-sm leading-relaxed">
                 {member.bio}
               </p>
 
@@ -60,8 +60,8 @@ const Team = ({ teamMembers }) => {
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                   </svg>
                   <p className="text-sm">
-                    <span className="font-semibold text-foreground">Anime Favorito:</span>{' '}
-                    <span className="font-medium text-accent">{member.animeFav}</span>
+                    <span className="google-font-text !font-semibold text-foreground">Anime Favorito:</span>{' '}
+                    <span className="google-font-text !font-medium text-accent">{member.animeFav}</span>
                   </p>
                 </div>
               </div>
@@ -92,7 +92,7 @@ const Team = ({ teamMembers }) => {
                 </div>
 
                 {/* Etiqueta de rol */}
-                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                <span className="google-font-text rounded-full bg-primary/10 px-3 py-1 text-xs !font-medium text-primary">
                   {member.role.split('&')[0].trim()}
                 </span>
               </div>

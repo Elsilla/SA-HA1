@@ -32,12 +32,12 @@ const CollectionsAlternate = () => {
               <div className="w-full lg:w-1/2">
                 <div className="space-y-8">
                   <div>
-                    <h3 className="google-font-title text-3xl font-bold text-foreground md:text-4xl lg:text-7xl mb-4">
+                    <h3 className="google-font-text text-3xl !font-bold text-foreground md:text-4xl lg:text-[2.8rem] mb-4">
                       {collection.title}
                     </h3>
                   </div>
 
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  <p className="google-font-text text-lg text-muted-foreground leading-relaxed mb-6">
                     {collection.description}
                   </p>
 
@@ -46,7 +46,7 @@ const CollectionsAlternate = () => {
                       className="bg-[#4f7e6b] hover:bg-[#5e8c77] text-white px-10 py-7 text-lg font-semibold rounded-full hover:shadow-xl transition-all duration-300"
                       asChild
                     >
-                      <a href={collection.link}>
+                      <a href={collection.link} className="google-font-text">
                         Explorar Colección
                         <svg
                           className="ml-2 w-5 h-5"

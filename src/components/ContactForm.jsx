@@ -38,10 +38,10 @@ const ContactForm = () => {
     <section className="bg-background py-20">
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-12 text-center animate-fade-in">
-          <h2 className="google-font-title mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-7xl">
+          <h2 className="google-font-title mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-[3.3rem]">
             Contáctanos
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <p className="google-font-text mx-auto max-w-2xl text-muted-foreground">
             ¿Tienes alguna pregunta? Estamos aquí para ayudarte
           </p>
         </div>
@@ -51,7 +51,7 @@ const ContactForm = () => {
           <div className="space-y-6 animate-fade-in-up">
             <Card className="border-none shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl">Información</CardTitle>
+                <CardTitle className="google-font-text !font-medium text-2xl">Información</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-4">
@@ -59,8 +59,8 @@ const ContactForm = () => {
                     <Mail className="h-5 w-5 text-secondary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="google-font-text !font-semibold text-foreground">Email</h3>
+                    <p className="google-font-text text-muted-foreground">
                       info@hosekijoyas.com
                     </p>
                   </div>
@@ -71,8 +71,8 @@ const ContactForm = () => {
                     <Phone className="h-5 w-5 text-secondary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Teléfono</h3>
-                    <p className="text-muted-foreground">+569 80085 80085</p>
+                    <h3 className="google-font-text !font-semibold text-foreground">Teléfono</h3>
+                    <p className="google-font-text text-muted-foreground">+569 80085 80085</p>
                   </div>
                 </div>
 
@@ -81,8 +81,8 @@ const ContactForm = () => {
                     <MapPin className="h-5 w-5 text-secondary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Dirección</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="google-font-text !font-semibold text-foreground">Dirección</h3>
+                    <p className="google-font-text text-muted-foreground">
                       Calle Perón Perales 123
                       <br />
                       Pudahuel, Chile
@@ -99,12 +99,12 @@ const ContactForm = () => {
             style={{ animationDelay: "200ms" }}
           >
             <CardHeader>
-              <CardTitle className="text-2xl">Envíanos un Mensaje</CardTitle>
+              <CardTitle className="google-font-text !font-medium text-2xl">Envíanos un Mensaje</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="name">
+                  <Label htmlFor="name" className="google-font-text !font-semibold">
                     Nombre <span className="text-destructive">*</span>
                   </Label>
                   <Input
@@ -113,12 +113,13 @@ const ContactForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Tu nombre completo"
+                    className="google-font-text"
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="email">
+                  <Label htmlFor="email" className="google-font-text !font-semibold">
                     Email <span className="text-destructive">*</span>
                   </Label>
                   <Input
@@ -128,24 +129,28 @@ const ContactForm = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="tu@email.com"
+                    pattern="^[^\s@]+@[^\s@]+.[^\s@]+$"
+                    className="google-font-text"
                     required
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="phone">Teléfono</Label>
+                  <Label htmlFor="phone" className="google-font-text !font-semibold">Teléfono</Label>
                   <Input
                     id="phone"
                     name="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+56912345678"
+                    pattern="^+?\d{8,15}$"
+                    className="google-font-text"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="message">
+                  <Label htmlFor="message" className="google-font-text !font-semibold">
                     Mensaje <span className="text-destructive">*</span>
                   </Label>
                   <Textarea
@@ -155,13 +160,14 @@ const ContactForm = () => {
                     onChange={handleChange}
                     placeholder="Cuéntanos cómo podemos ayudarte..."
                     rows={4}
+                    className="google-font-text"
                     required
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+                  className="google-font-text !font-medium w-full bg-accent text-accent-foreground hover:bg-accent/90"
                 >
                   Enviar Mensaje
                 </Button>
