@@ -31,7 +31,7 @@ export const teamMembers = [
     name: "Diego Villagrán",
     role: "Desarrollador Full-Stack",
     bio: "Geek de corazón, asegura que la magia de Hoseki llegue a tu pantalla.",
-    animeFav: "Attack on Titan",
+    animeFav: "Neon Genesis Evangelion",
     github: "marcord",
     linkedin: "marco-rodriguez",
     photo: diegoPhoto,  // ← AGREGAR FOTO
