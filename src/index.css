@@ -60,11 +60,6 @@
   border: 1px solid #e9ecef;
 }
 
-.bg-card:hover {
-  border-color: #4f7e6b;
-  transform: translateY(-4px);
-}
-
 /* Gradientes con la paleta Hoseki */
 .from-primary\/20 {
   --tw-gradient-from: rgba(48, 65, 49, 0.2);
@@ -83,5 +78,16 @@
 .google-font-text {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+}
+
+.btn-green-arcadia {
+  background: #5e8c77;
+  color: white;
+  border-radius: 1rem;
+}
+
+.btn-green-arcadia:hover {
+  color: black;
+  border: 1px solid black
 }
  

@@ -25,7 +25,9 @@ const Carousel = ({ products, title = "Colecciones Destacadas", subtitle = "Desc
 
       {/* Slider container */}
       <div className="relative overflow-hidden">
-
+        <h2 className="google-font-title mb-8 text-3xl text-center font-bold text-foreground md:text-4xl lg:text-[3rem]">
+          Productos Destacados
+        </h2>
         {/* Slides */}
         <div
           className="flex transition-transform duration-500"

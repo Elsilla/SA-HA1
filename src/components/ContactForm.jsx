@@ -38,7 +38,7 @@ const ContactForm = () => {
     <section className="bg-background py-20">
       <div className="container mx-auto px-6 md:px-12">
         <div className="mb-12 text-center animate-fade-in">
-          <h2 className="google-font-title mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-[3.3rem]">
+          <h2 className="google-font-title mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-[3rem]">
             Contáctanos
           </h2>
           <p className="google-font-text mx-auto max-w-2xl text-muted-foreground">
@@ -61,7 +61,7 @@ const ContactForm = () => {
                   <div>
                     <h3 className="google-font-text !font-semibold text-foreground">Email</h3>
                     <p className="google-font-text text-muted-foreground">
-                      info@hosekijoyas.com
+                      info@hoseki.com
                     </p>
                   </div>
                 </div>
