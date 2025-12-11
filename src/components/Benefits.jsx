@@ -27,7 +27,7 @@ const Benefits = () => {
   return (
     <section className="bg-muted py-16">
       <div className="container mx-auto px-6 md:px-12">
-        <h2 className="google-font-title mb-12 text-center text-3xl font-bold text-foreground md:text-4xl lg:text-7xl animate-fade-in">
+        <h2 className="google-font-title mb-12 text-center text-3xl font-bold text-foreground md:text-4xl lg:text-[3.3rem] animate-fade-in">
           Beneficios
         </h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -42,10 +42,10 @@ const Benefits = () => {
                 <div className="mb-4 rounded-full bg-secondary p-6 transition-all duration-300 group-hover:bg-accent group-hover:scale-110 shadow-md">
                   <Icon className="h-8 w-8 text-secondary-foreground group-hover:text-accent-foreground" />
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-foreground">
+                <h3 className="google-font-text mb-2 text-[1.1rem] !font-semibold text-foreground">
                   {benefit.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="google-font-text text-[0.9rem] text-muted-foreground">
                   {benefit.description}
                 </p>
               </div>

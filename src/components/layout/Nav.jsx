@@ -13,7 +13,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-md shadow-sm">
+    <nav className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur shadow-sm">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -27,7 +27,7 @@ const Nav = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground transition-colors hover:text-accent"
+                className="google-font-text text-sm !font-medium text-foreground transition-colors hover:text-accent"
               >
                 {link.name}
               </a>

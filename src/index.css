@@ -75,7 +75,13 @@
 }
 
 .google-font-title {
-  font-family: 'Tangerine';
-  font-weight: 900;
+  /* font-family: "Cinzel", serif; */
+  font-family: "Playfair Display SC", serif;
+  font-weight: 600;
+}
+
+.google-font-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
  

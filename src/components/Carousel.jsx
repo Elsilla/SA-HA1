@@ -42,8 +42,8 @@ const Carousel = ({ products, title = "Colecciones Destacadas", subtitle = "Desc
                       alt={product.title}
                       className="w-full h-64 object-cover rounded-md" /* Ajusté altura para 4 columnas */
                     />
-                    <h3 className="mt-3 font-semibold text-lg line-clamp-1">{product.title}</h3>
-                    <p className="text-gray-500 font-medium">{product.price}</p>
+                    <h3 className="google-font-text mt-3 !font-[500] text-lg line-clamp-1">{product.title}</h3>
+                    <p className="google-font-text text-gray-500 font-medium">{product.price}</p>
                   </div>
                 ))}
               </div>

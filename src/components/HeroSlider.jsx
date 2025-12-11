@@ -40,15 +40,15 @@ const HeroSlider = () => {
           <div className="absolute inset-0 flex items-center">
             <div className="container mx-auto px-6 md:px-12">
               <div className="max-w-2xl animate-fade-in-up">
-                <h1 className="google-font-title mb-4 text-4xl text-white md:text-6xl lg:text-[5rem] drop-shadow-lg">
+                <h1 className="google-font-title mb-[0.5rem] text-4xl text-white md:text-6xl lg:text-6xl drop-shadow-lg">
                   {slide.title}
                 </h1>
-                <p className="mb-8 text-lg text-white md:text-xl drop-shadow">
+                <p className="google-font-text mb-8 text-lg text-white md:text-xl drop-shadow">
                   {slide.subtitle}
                 </p>
                 <Button
                   size="lg"
-                  className="bg-white text-black hover:bg-white/90 shadow-2xl transition-all hover:scale-105 px-8 py-6 text-lg font-bold rounded-full"
+                  className="google-font-text bg-white text-black hover:bg-white/90 shadow-2xl transition-all hover:scale-105 px-8 py-6 text-lg font-bold rounded-full"
                 >
                   Explorar Colección
                 </Button>
@@ -80,7 +80,7 @@ const HeroSlider = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all ${
+            className={`google-font-text h-2 rounded-full transition-all ${
               index === currentSlide ? "w-8 bg-white" : "w-2 bg-white/50"
             }`}
             aria-label={`Ir a slide ${index + 1}`}
