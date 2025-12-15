@@ -1,0 +1,207 @@
+[
+  ///////////// COLLARES ////////////
+  {
+    "id": 1000,
+    "nombre": "Collar de Among Us",
+    "precio": 29990,
+    "categoria": "Collares",
+    "descripcion": "Audífonos Bluetooth con cancelación de ruido y estuche de carga rápida.",
+    "imagen": "https://picsum.photos/300?random=1"
+  },
+  {
+    "id": 1001,
+    "nombre": "Collar Dragon Ball",
+    "precio": 24990,
+    "categoria": "Collares",
+    "descripcion": "Mochila resistente al agua con capacidad de 25L.",
+    "imagen": "https://picsum.photos/300?random=2"
+  },
+  {
+    "id": 1002,
+    "nombre": "Collar One Piece",
+    "precio": 14990,
+    "categoria": "Collares",
+    "descripcion": "Botella de acero inoxidable que mantiene bebidas frías por 12h.",
+    "imagen": "https://picsum.photos/300?random=3"
+  },
+  {
+    "id": 1003,
+    "nombre": "Collar Spider-Man",
+    "precio": 59990,
+    "categoria": "Collares",
+    "descripcion": "Teclado mecánico con switches blue y retroiluminación RGB.",
+    "imagen": "https://picsum.photos/300?random=4"
+  },
+  {
+    "id": 1004,
+    "nombre": "Collar Sailor Moon",
+    "precio": 39990,
+    "categoria": "Collares",
+    "descripcion": "Zapatillas deportivas transpirables para uso diario.",
+    "imagen": "https://picsum.photos/300?random=5"
+  },
+  ///////////// ANILLOS ////////////
+  {
+    "id": 2000,
+    "nombre": "Anillo de Pikachu",
+    "precio": 29990,
+    "categoria": "Anillos",
+    "descripcion": "Audífonos Bluetooth con cancelación de ruido y estuche de carga rápida.",
+    "imagen": "https://picsum.photos/300?random=1"
+  },
+  {
+    "id": 2001,
+    "nombre": "Anillo Dragon Ball",
+    "precio": 24990,
+    "categoria": "Anillos",
+    "descripcion": "Mochila resistente al agua con capacidad de 25L.",
+    "imagen": "https://picsum.photos/300?random=2"
+  },
+  {
+    "id": 2002,
+    "nombre": "Anillo de Eevee",
+    "precio": 14990,
+    "categoria": "Anillos",
+    "descripcion": "Botella de acero inoxidable que mantiene bebidas frías por 12h.",
+    "imagen": "https://picsum.photos/300?random=3"
+  },
+  {
+    "id": 2003,
+    "nombre": "Anillo Magical Doremi",
+    "precio": 59990,
+    "categoria": "Anillos",
+    "descripcion": "Teclado mecánico con switches blue y retroiluminación RGB.",
+    "imagen": "https://picsum.photos/300?random=4"
+  },
+  {
+    "id": 2004,
+    "nombre": "Zapatillas Runner AirFlow",
+    "precio": 39990,
+    "categoria": "Anillos",
+    "descripcion": "Zapatillas deportivas transpirables para uso diario.",
+    "imagen": "https://picsum.photos/300?random=5"
+  },
+  ///////////// DIJES ////////////
+  {
+    "id": 3000,
+    "nombre": "Audífonos Inalámbricos NovaSound",
+    "precio": 29990,
+    "categoria": "Dijes",
+    "descripcion": "Audífonos Bluetooth con cancelación de ruido y estuche de carga rápida.",
+    "imagen": "https://picsum.photos/300?random=1"
+  },
+  {
+    "id": 3001,
+    "nombre": "Mochila Urban Travel",
+    "precio": 24990,
+    "categoria": "Dijes",
+    "descripcion": "Mochila resistente al agua con capacidad de 25L.",
+    "imagen": "https://picsum.photos/300?random=2"
+  },
+  {
+    "id": 3002,
+    "nombre": "Botella Térmica SteelPro",
+    "precio": 14990,
+    "categoria": "Dijes",
+    "descripcion": "Botella de acero inoxidable que mantiene bebidas frías por 12h.",
+    "imagen": "https://picsum.photos/300?random=3"
+  },
+  {
+    "id": 3003,
+    "nombre": "Teclado Mecánico RGB Orion",
+    "precio": 59990,
+    "categoria": "Dijes",
+    "descripcion": "Teclado mecánico con switches blue y retroiluminación RGB.",
+    "imagen": "https://picsum.photos/300?random=4"
+  },
+  {
+    "id": 3004,
+    "nombre": "Zapatillas Runner AirFlow",
+    "precio": 39990,
+    "categoria": "Dijes",
+    "descripcion": "Zapatillas deportivas transpirables para uso diario.",
+    "imagen": "https://picsum.photos/300?random=5"
+  },
+  ///////////// PULSERAS ////////////
+  {
+    "id": 4000,
+    "nombre": "Pulsera Dragon Ball",
+    "precio": 29990,
+    "categoria": "Pulseras",
+    "descripcion": "Audífonos Bluetooth con cancelación de ruido y estuche de carga rápida.",
+    "imagen": "https://picsum.photos/300?random=1"
+  },
+  {
+    "id": 4001,
+    "nombre": "",
+    "precio": 24990,
+    "categoria": "Pulseras",
+    "descripcion": "Mochila resistente al agua con capacidad de 25L.",
+    "imagen": "https://picsum.photos/300?random=2"
+  },
+  {
+    "id": 4002,
+    "nombre": "Botella Térmica SteelPro",
+    "precio": 14990,
+    "categoria": "Pulseras",
+    "descripcion": "Botella de acero inoxidable que mantiene bebidas frías por 12h.",
+    "imagen": "https://picsum.photos/300?random=3"
+  },
+  {
+    "id": 4003,
+    "nombre": "Teclado Mecánico RGB Orion",
+    "precio": 59990,
+    "categoria": "Pulseras",
+    "descripcion": "Teclado mecánico con switches blue y retroiluminación RGB.",
+    "imagen": "https://picsum.photos/300?random=4"
+  },
+  {
+    "id": 4004,
+    "nombre": "Zapatillas Runner AirFlow",
+    "precio": 39990,
+    "categoria": "Pulseras",
+    "descripcion": "Zapatillas deportivas transpirables para uso diario.",
+    "imagen": "https://picsum.photos/300?random=5"
+  },
+  ///////////// AROS ////////////
+  {
+    "id": 5000,
+    "nombre": "Aros Sailor Moon",
+    "precio": 29990,
+    "categoria": "Aros",
+    "descripcion": "Audífonos Bluetooth con cancelación de ruido y estuche de carga rápida.",
+    "imagen": "https://picsum.photos/300?random=1"
+  },
+  {
+    "id": 5001,
+    "nombre": "Mochila Urban Travel",
+    "precio": 24990,
+    "categoria": "Aros",
+    "descripcion": "Mochila resistente al agua con capacidad de 25L.",
+    "imagen": "https://picsum.photos/300?random=2"
+  },
+  {
+    "id": 5002,
+    "nombre": "Botella Térmica SteelPro",
+    "precio": 14990,
+    "categoria": "Aros",
+    "descripcion": "Botella de acero inoxidable que mantiene bebidas frías por 12h.",
+    "imagen": "https://picsum.photos/300?random=3"
+  },
+  {
+    "id": 5003,
+    "nombre": "Teclado Mecánico RGB Orion",
+    "precio": 59990,
+    "categoria": "Aros",
+    "descripcion": "Teclado mecánico con switches blue y retroiluminación RGB.",
+    "imagen": "https://picsum.photos/300?random=4"
+  },
+  {
+    "id": 5004,
+    "nombre": "Zapatillas Runner AirFlow",
+    "precio": 39990,
+    "categoria": "Aros",
+    "descripcion": "Zapatillas deportivas transpirables para uso diario.",
+    "imagen": "https://picsum.photos/300?random=5"
+  }
+]
