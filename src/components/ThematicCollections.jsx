@@ -42,10 +42,11 @@ const ThematicCollection = ({collections}) => {
                     </p>
                   </div>
                   <Button
-                    variant="default"
-                    className="google-font-text btn-green-arcadia !font-medium w-full bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                    className="google-font-text btn-green-arcadia !font-medium w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 !p-0"
                   >
-                    Ir a la Colección
+                    <a className="flex justify-center items-center text-center w-full h-full" href={collection.link}>
+                      Ir a la Colección
+                    </a>
                   </Button>
                 </div>
               </CardContent>
