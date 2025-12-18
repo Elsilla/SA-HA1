@@ -9,7 +9,7 @@ export const collections = [
     description:
       "Joyas inspiradas en tus series favoritas. Sailor Moon, Attack on Titan, My Hero Academia y más.",
     image: collectionAnime,
-    link: "/coleccion/anime",
+    link: "/productos",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const collections = [
     description:
       "Diseños épicos de tus videojuegos legendarios. Zelda, Pokemon, Kingdom Hearts y más.",
     image: collectionGaming,
-    link: "/coleccion/gaming",
+    link: "/productos",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ export const collections = [
     description:
       "Elegancia tradicional japonesa. Cherry blossoms, origami, samurai y cultura nipona.",
     image: collectionJapanese,
-    link: "/coleccion/japonesa",
+    link: "/productos",
   },
 ];
 
