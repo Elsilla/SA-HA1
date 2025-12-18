@@ -70,6 +70,8 @@ const AdminProductos = () => {
     setProductos(updated);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
 
+    console.log("ID agregado: ", generateProductId(productData.categoria, productos))
+
     setShowForm(false);
     setEditingProduct(null);
 
