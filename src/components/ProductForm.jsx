@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CATEGORY_ID_RULES } from '@/lib/helpers';
+import { FileUploaderRegular } from "@uploadcare/react-uploader";
+import "@uploadcare/react-uploader/core.css";
 
 const CATEGORIES = Object.keys(CATEGORY_ID_RULES);
 
@@ -51,6 +53,9 @@ const ProductForm = ({ initialData = null, onSubmit, onCancel }) => {
       setErrors(newErrors);
       return;
     }
+
+    if (!formData.imagen)
+    newErrors.imagen = 'Imagen requerida';
 
     onSubmit(formData);
   };
@@ -140,17 +145,31 @@ const ProductForm = ({ initialData = null, onSubmit, onCancel }) => {
         </div>
 
         {/* Imagen */}
-        <div className='flex flex-col'>
+        <div className="flex flex-col">
           <label className="block text-sm font-medium mb-1">Imagen</label>
-          <input
-            type="file"
-            name="imagen"
-            accept="image/*"
-            onChange={handleChange}
-            className="w-full border px-3 py-2 rounded"
+
+          <FileUploaderRegular
+            pubkey={import.meta.env.VITE_UPLOADCARE_PUBLIC_KEY}
+            multiple={false}
+            imgOnly
+            maxLocalFileSizeBytes={2_000_000} // 2MB
+            sourceList="local, camera"
+            onFileUploadSuccess={(file) => {
+              setFormData(prev => ({
+                ...prev,
+                imagen: file.cdnUrl, // 👈 URL pública
+              }));
+            }}
           />
-          {typeof formData.imagen === 'string' && formData.imagen && (
-            <p className="text-xs text-gray-500 mt-1">Imagen actual: {formData.imagen}</p>
+          {errors.imagen && (
+            <p className="text-sm text-red-500 mt-1">{errors.imagen}</p>
+          )}
+          {formData.imagen && (
+            <img
+              src={formData.imagen}
+              alt="preview"
+              className="mt-3 w-32 h-32 object-cover rounded"
+            />
           )}
         </div>
 
