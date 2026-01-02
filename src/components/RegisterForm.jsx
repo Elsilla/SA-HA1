@@ -4,178 +4,199 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "react-toastify";
-import { Mail, Lock, UserPlus, User } from "lucide-react";
-import { Link } from "react-router-dom";
+import { UserPlus } from "lucide-react";
 
-const RegisterForm = () => {
+const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
+    phone: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    address: "",
+    city: "",
+    region: "",
+    postalCode: "",
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.password ||
-      !formData.confirmPassword
-    ) {
-      toast.error("Por favor completa todos los campos");
-      return;
-    }
-
-    if (formData.password.length < 6) {
-      toast.error("La contraseña debe tener al menos 6 caracteres");
-      return;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      toast.error("Las contraseñas no coinciden");
-      return;
-    }
-
-    toast.success("¡Registro exitoso! Ya puedes iniciar sesión.");
-    setFormData({
-      name: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
-  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validaciones obligatorias
+    if (!formData.name || !formData.email || !formData.password) {
+      toast.error("Completa todos los campos obligatorios");
+      return;
+    }
+
+    if (formData.password.length < 8) {
+      toast.error("La contraseña debe tener al menos 8 caracteres");
+      return;
+    }
+
+     const phoneRegex = /^\+?\d{8,15}$/;
+
+if (formData.phone && !phoneRegex.test(formData.phone)) {
+  toast.error("Teléfono inválido. Ej: +56912345678");
+  return;
+}
+
+
+    // Generar JSON
+    const userJSON = {
+      nombre: formData.name,
+      telefono: formData.phone,
+      email: formData.email,
+      contrasenia: formData.password,
+      direccionEnvio: formData.address
+        ? {
+            direccion: formData.address,
+            ciudad: formData.city,
+            region: formData.region,
+            codigoPostal: formData.postalCode,
+          }
+        : null,
+    };
+
+    console.log("Usuario registrado:", userJSON);
+
+    toast.success("¡Registro exitoso! Puedes iniciar sesión ahora");
+
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      password: "",
+      address: "",
+      city: "",
+      region: "",
+      postalCode: "",
+    });
+  };
+
   return (
     <section className="bg-background py-20">
       <div className="container mx-auto px-6 md:px-12">
-        {/* Header */}
-        <div className="mb-12 text-center animate-fade-in">
-          <h2 className="google-font-title mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-[3rem]">
-            Crear Cuenta
-          </h2>
-          <p className="google-font-text mx-auto max-w-2xl text-muted-foreground">
-            Regístrate para comenzar tu experiencia
-          </p>
-        </div>
+        <Card className="mx-auto max-w-xl border-none shadow-md animate-fade-in-up">
+          <CardHeader className="text-center">
+            <CardTitle className="google-font-title text-3xl font-bold">
+              Crear Cuenta
+            </CardTitle>
+            <p className="google-font-text text-muted-foreground">
+              Regístrate para una experiencia personalizada
+            </p>
+          </CardHeader>
 
-        {/* Card */}
-        <div className="mx-auto max-w-md animate-fade-in-up">
-          <Card className="border-none shadow-md">
-            <CardHeader>
-              <CardTitle className="google-font-text !font-medium text-2xl text-center">
-                Registro
-              </CardTitle>
-            </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Nombre */}
+              <div>
+                <Label className="google-font-text !font-semibold">
+                  Nombre *
+                </Label>
+                <Input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Nombre completo"
+                  required
+                />
+              </div>
 
-            <CardContent className="space-y-6">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Nombre */}
-                <div>
-                  <Label className="google-font-text !font-semibold">
-                    Nombre
-                  </Label>
-                  <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Tu nombre completo"
-                      className="pl-10 google-font-text"
-                      required
-                    />
-                  </div>
+              {/* Teléfono */}
+              <div>
+                <Label className="google-font-text !font-semibold">
+                  Teléfono
+                </Label>
+                <Input
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+56912345678"
+                
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <Label className="google-font-text !font-semibold">
+                  Email *
+                </Label>
+                <Input
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="cliente@email.com"
+                  required
+                />
+              </div>
+
+              {/* Contraseña */}
+              <div>
+                <Label className="google-font-text !font-semibold">
+                  Contraseña *
+                </Label>
+                <Input
+                  name="password"
+                  type="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  placeholder="Mínimo 8 caracteres"
+                  required
+                />
+              </div>
+
+              {/* Dirección */}
+              <div className="pt-4 border-t">
+                <h3 className="google-font-text font-semibold text-lg mb-2">
+                  Dirección de envío (opcional)
+                </h3>
+
+                <div className="space-y-3">
+                  <Input
+                    name="address"
+                    value={formData.address}
+                    onChange={handleChange}
+                    placeholder="Dirección"
+                  />
+                  <Input
+                    name="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                    placeholder="Ciudad"
+                  />
+                  <Input
+                    name="region"
+                    value={formData.region}
+                    onChange={handleChange}
+                    placeholder="Región"
+                  />
+                  <Input
+                    name="postalCode"
+                    value={formData.postalCode}
+                    onChange={handleChange}
+                    placeholder="Código Postal"
+                  />
                 </div>
+              </div>
 
-                {/* Email */}
-                <div>
-                  <Label className="google-font-text !font-semibold">
-                    Email
-                  </Label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="tu@email.com"
-                      className="pl-10 google-font-text"
-                      required
-                    />
-                  </div>
-                </div>
-
-                {/* Password */}
-                <div>
-                  <Label className="google-font-text !font-semibold">
-                    Contraseña
-                  </Label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      name="password"
-                      type="password"
-                      value={formData.password}
-                      onChange={handleChange}
-                      placeholder="••••••••"
-                      className="pl-10 google-font-text"
-                      required
-                    />
-                  </div>
-                </div>
-
-                {/* Confirm Password */}
-                <div>
-                  <Label className="google-font-text !font-semibold">
-                    Confirmar Contraseña
-                  </Label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      name="confirmPassword"
-                      type="password"
-                      value={formData.confirmPassword}
-                      onChange={handleChange}
-                      placeholder="••••••••"
-                      className="pl-10 google-font-text"
-                      required
-                    />
-                  </div>
-                </div>
-
-                {/* Button */}
-                <Button
-                  type="submit"
-                  className="google-font-text !font-medium w-full bg-accent text-accent-foreground hover:bg-accent/90 flex gap-2"
-                >
-                  <UserPlus className="h-4 w-4" />
-                  Registrarse
-                </Button>
-              </form>
-
-              {/* Login link */}
-              <p className="google-font-text text-center text-sm text-muted-foreground">
-                ¿Ya tienes cuenta?{" "}
-                <Link
-                  to="/login"
-                  className="font-semibold text-accent hover:underline"
-                >
-                  Inicia sesión
-                </Link>
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+              <Button
+                type="submit"
+                className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+              >
+                <UserPlus className="mr-2 h-4 w-4" />
+                Registrarse
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
 };
 
-export default RegisterForm;
+export default Register;
