@@ -24,34 +24,16 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-// 1️⃣ Obtener usuarios existentes
-const users = JSON.parse(localStorage.getItem("users")) || [];
+    // 1️⃣ Obtener usuarios existentes
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-// 2️⃣ Verificar si el email ya está registrado
-const emailExists = users.some(
-  (user) => user.email === formData.email
-);
+    // 2️⃣ Verificar si el email ya está registrado
+    const emailExists = users.some((user) => user.email === formData.email);
 
-if (emailExists) {
-  toast.error("Este email ya está registrado");
-  return;
-}
-
-// 3️⃣ Crear usuario para guardar
-const newUser = {
-  name: formData.name,
-  phone: formData.phone,
-  email: formData.email,
-  password: formData.password,
-  address: formData.address,
-  city: formData.city,
-  region: formData.region,
-  postalCode: formData.postalCode,
-};
-
-// 4️⃣ Guardar usuario
-users.push(newUser);
-localStorage.setItem("users", JSON.stringify(users));
+    if (emailExists) {
+      toast.error("Este email ya está registrado");
+      return;
+    }
 
     // Validaciones obligatorias
     if (!formData.name || !formData.email || !formData.password) {
@@ -64,31 +46,46 @@ localStorage.setItem("users", JSON.stringify(users));
       return;
     }
 
-     const phoneRegex = /^\+?\d{8,15}$/;
+    const phoneRegex = /^\+?\d{8,15}$/;
 
-if (formData.phone && !phoneRegex.test(formData.phone)) {
-  toast.error("Teléfono inválido. Ej: +56912345678");
-  return;
-}
+    if (formData.phone && !phoneRegex.test(formData.phone)) {
+      toast.error("Teléfono inválido. Ej: +56912345678");
+      return;
+    }
 
-
-    // Generar JSON
-    const userJSON = {
-      nombre: formData.name,
-      telefono: formData.phone,
+    // 3️⃣ Crear usuario para guardar
+    const newUser = {
+      name: formData.name,
+      phone: formData.phone,
       email: formData.email,
-      contrasenia: formData.password,
-      direccionEnvio: formData.address
-        ? {
-            direccion: formData.address,
-            ciudad: formData.city,
-            region: formData.region,
-            codigoPostal: formData.postalCode,
-          }
-        : null,
+      password: formData.password,
+      address: formData.address,
+      city: formData.city,
+      region: formData.region,
+      postalCode: formData.postalCode,
     };
 
-    console.log("Usuario registrado:", userJSON);
+    // 4️⃣ Guardar usuario
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
+
+    // // Generar JSON
+    // const userJSON = {
+    //   nombre: formData.name,
+    //   telefono: formData.phone,
+    //   email: formData.email,
+    //   contrasenia: formData.password,
+    //   direccionEnvio: formData.address
+    //     ? {
+    //         direccion: formData.address,
+    //         ciudad: formData.city,
+    //         region: formData.region,
+    //         codigoPostal: formData.postalCode,
+    //       }
+    //     : null,
+    // };
+
+    console.log("Usuario registrado:", JSON.stringify(users));
 
     toast.success("¡Registro exitoso! Puedes iniciar sesión ahora");
 
@@ -144,7 +141,6 @@ if (formData.phone && !phoneRegex.test(formData.phone)) {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+56912345678"
-                
                 />
               </div>
 
