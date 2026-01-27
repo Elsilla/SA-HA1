@@ -16,7 +16,7 @@ const Checkout = () => {
   const { cart, clearCart } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
-  
+
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -57,7 +57,6 @@ const Checkout = () => {
   };
 
   const handleSubmitOrder = () => {
-    // Validaciones
     if (step === 1) {
       const { name, phone, street, city, region, zipCode } = formData.shippingAddress;
       if (!name || !phone || !street || !city || !region || !zipCode) {
@@ -65,7 +64,7 @@ const Checkout = () => {
         return;
       }
     }
-    
+
     if (step === 2 && formData.payment.method === "Tarjeta") {
       const { cardName, cardNumber, expiry, cvv } = formData.payment;
       if (!cardName || !cardNumber || !expiry || !cvv) {
@@ -73,12 +72,12 @@ const Checkout = () => {
         return;
       }
     }
-    
+
     setLoading(true);
-    
+
     setTimeout(() => {
       setLoading(false);
-      
+
       const orderData = {
         items: cart,
         subtotal: totalPrice,
@@ -91,79 +90,83 @@ const Checkout = () => {
         paymentMethod: formData.payment.method,
         customerName: user?.name || formData.shippingAddress.name,
         customerEmail: user?.email || "",
-        date: new Date().toLocaleDateString('es-CL', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit'
+        date: new Date().toLocaleDateString("es-CL", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit"
         })
       };
-      
+
       clearCart();
-      
-      navigate("/order-confirmation", { 
-        state: { 
-          orderData: orderData
-        }
-      });
+      navigate("/order-confirmation", { state: { orderData } });
     }, 3000);
   };
 
   return (
     <div className="max-w-7xl mx-auto my-8 md:my-16 px-4 sm:px-6 lg:px-8">
-      {/* Pasos */}
       <CheckoutSteps step={step} />
 
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Formulario principal */}
-        <div className="lg:w-2/3">
-          <div className="bg-white rounded-2xl shadow-lg p-6">
-            {step === 1 && (
-              <CheckoutAddressForm 
-                formData={formData}
-                onFormDataChange={handleFormDataChange}
-              />
-            )}
-
-            {step === 2 && (
-              <CheckoutPaymentForm 
-                formData={formData}
-                onFormDataChange={handleFormDataChange}
-              />
-            )}
-
-            {step === 3 && (
-              <CheckoutSummaryStep 
+      {/* STEP 3 → CENTRADO */}
+      {step === 3 ? (
+        <div className="flex justify-center">
+          <div className="w-full max-w-3xl">
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              <CheckoutSummaryStep
                 cart={cart}
                 formData={formData}
                 finalTotal={finalTotal}
                 shippingCost={shippingCost}
               />
-            )}
 
-            {/* Navegación */}
-            <CheckoutNavigation 
-              step={step}
-              onStepChange={setStep}
-              loading={loading}
-              onConfirmOrder={handleSubmitOrder}
-            />
+              <CheckoutNavigation
+                step={step}
+                onStepChange={setStep}
+                loading={loading}
+                onConfirmOrder={handleSubmitOrder}
+              />
+            </div>
           </div>
         </div>
+      ) : (
+        /* STEP 1 y 2 → DOS COLUMNAS */
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="lg:w-2/3">
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              {step === 1 && (
+                <CheckoutAddressForm
+                  formData={formData}
+                  onFormDataChange={handleFormDataChange}
+                />
+              )}
 
-        {/* Sidebar (solo en pasos 1 y 2) */}
-        {step < 3 && (
+              {step === 2 && (
+                <CheckoutPaymentForm
+                  formData={formData}
+                  onFormDataChange={handleFormDataChange}
+                />
+              )}
+
+              <CheckoutNavigation
+                step={step}
+                onStepChange={setStep}
+                loading={loading}
+                onConfirmOrder={handleSubmitOrder}
+              />
+            </div>
+          </div>
+
           <div className="lg:w-1/3">
-            <CheckoutSidebar 
+            <CheckoutSidebar
               cart={cart}
               totalPrice={totalPrice}
               shippingCost={shippingCost}
               finalTotal={finalTotal}
             />
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

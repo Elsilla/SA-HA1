@@ -9,20 +9,28 @@ const CheckoutSteps = ({ step }) => {
 
     return (
         <div className="mb-8">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">
                 Finalizar compra
             </h1>
 
-            <div className="flex items-center justify-between max-w-2xl">
+            <div className="flex items-center justify-between max-w-2xl mx-auto">
                 {steps.map((stepItem, index) => (
                     <React.Fragment key={stepItem.number}>
                         <div className="flex items-center">
-                            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= stepItem.number ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-500'
-                                }`}>
+                            <div
+                                className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= stepItem.number
+                                        ? 'bg-gray-900 text-white'
+                                        : 'bg-gray-200 text-gray-500'
+                                    }`}
+                            >
                                 {stepItem.number}
                             </div>
-                            <span className={`ml-2 font-medium ${step >= stepItem.number ? 'text-gray-900' : 'text-gray-500'
-                                }`}>
+                            <span
+                                className={`ml-2 font-medium ${step >= stepItem.number
+                                        ? 'text-gray-900'
+                                        : 'text-gray-500'
+                                    }`}
+                            >
                                 {stepItem.label}
                             </span>
                         </div>
